@@ -1,29 +1,36 @@
+@colorLightBackground = #2F3129;
+@colorDarkBackground  = #1F201C;
+@colorHyperlink       = #9999ff;
+@colorNormalText      = #ffffff;
+
+@minWidthAutofold = 75px;
+
 body {
-    background-color: #2F3129;
-    color: #ffffff;
+    background-color: @colorLightBackground;
+    color: @colorNormalText;
     padding: 0;
     margin: 0;
 
     #header,
     #content,
     #footer {
-        margin-left: 75px;
+        margin-left: @minWidthAutofold;
     }
 }
 
 a {
-    color: #9999ff;
+    color: @colorHyperlink;
     text-decoration: none;
 }
 
 .autofold {
     position: fixed;
-    width: 75px;
+    width: @minWidthAutofold;
     height: 100%;
-    background-color: #1F201C;
+    background-color: @colorDarkBackground;
 
     &:hover {
-        min-width: 75px;
+        min-width: @minWidthAutofold;
         width: 20%;
     }
 }
