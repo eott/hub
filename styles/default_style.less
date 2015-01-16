@@ -2,6 +2,7 @@
 @colorDarkBackground  = #1F201C;
 @colorHyperlink       = #9999ff;
 @colorNormalText      = #ffffff;
+@colorWhite           = #ffffff;
 
 @minWidthAutofold = 75px;
 
@@ -15,6 +16,13 @@ body {
     #content,
     #footer {
         margin-left: @minWidthAutofold;
+    }
+
+    #navbar {
+        .navbarIcon img {
+            color: @colorWhite;
+            width: 50px;
+        }
     }
 }
 
