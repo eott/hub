@@ -1,0 +1,70 @@
+body {
+  background-color: #2F3129;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body #header,
+body #content,
+body #footer {
+  margin-left: 75px;
+}
+body #navbar {
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #1F201C;
+}
+body #navbar .navbarIcon {
+  display: inline-block;
+  vertical-align: top;
+  height: 50px;
+  width: 50px;
+}
+body #navbar .navbarText {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50px;
+  font-size: 1.5em;
+  height: 50px;
+  margin-left: 25px;
+}
+body #navbar .navbarText span {
+  vertical-align: middle;
+}
+body #navbar svg {
+  width: 50px;
+  height: 50px;
+}
+body #navbar svg path {
+  fill: #ffffff;
+}
+body #header {
+  height: 50px;
+  font-size: 1.5em;
+  line-height: 50px;
+  background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
+}
+body #header span {
+  vertical-align: middle;
+  margin-left: 25px;
+}
+body #footer {
+  height: 50px;
+  font-size: 0.8em;
+  line-height: 50px;
+  background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
+}
+a {
+  color: #9999ff;
+  text-decoration: none;
+}
+.autofold {
+  position: fixed;
+  width: 75px;
+  height: 100%;
+}
+.autofold:hover {
+  min-width: 75px;
+  width: 20%;
+}
