@@ -4,11 +4,7 @@ body {
   font-family: 'Lato', sans-serif;
   padding: 0;
   margin: 0;
-}
-body #header,
-body #content,
-body #footer {
-  margin-left: 75px;
+  height: 100%;
 }
 body #navbar {
   white-space: nowrap;
@@ -40,7 +36,7 @@ body #navbar svg path {
   fill: #ffffff;
 }
 body #header {
-  height: 50px;
+  margin-left: 75px;
   font-size: 1.5em;
   line-height: 50px;
   background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
@@ -49,8 +45,12 @@ body #header span {
   vertical-align: middle;
   margin-left: 25px;
 }
+body #content {
+  height: calc(100% - 100px);
+  margin-left: 75px;
+}
 body #footer {
-  height: 50px;
+  margin-left: 75px;
   font-size: 0.8em;
   line-height: 50px;
   background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
