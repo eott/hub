@@ -19,6 +19,30 @@ body {
     }
 
     #navbar {
+        white-space: nowrap;
+        overflow: hidden;
+        background-color: @colorDarkBackground;
+
+        .navbarIcon {
+            display: inline-block;
+            vertical-align: top;
+            height: 50px;
+            width: 50px;
+        }
+
+        .navbarText {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 50px;
+            font-size: 1.5em;
+            height: 50px;
+            margin-left: 25px;
+
+            span {
+                vertical-align: middle;
+            }
+        }
+
         svg {
             width: 50px;
             height: 50px;
@@ -39,7 +63,6 @@ a {
     position: fixed;
     width: @minWidthAutofold;
     height: 100%;
-    background-color: @colorDarkBackground;
 
     &:hover {
         min-width: @minWidthAutofold;
