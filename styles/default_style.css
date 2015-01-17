@@ -16,6 +16,7 @@ body #navbar .navbarIcon {
   vertical-align: top;
   height: 50px;
   width: 50px;
+  margin: 10px 0 10px 12px;
 }
 body #navbar .navbarText {
   display: inline-block;
@@ -23,10 +24,15 @@ body #navbar .navbarText {
   line-height: 50px;
   font-size: 1.5em;
   height: 50px;
-  margin-left: 25px;
+  margin: 10px 0 10px 40px;
 }
 body #navbar .navbarText span {
   vertical-align: middle;
+}
+body #navbar .navbarVerticalDivider {
+  width: 75px;
+  text-align: center;
+  margin: 20px 0;
 }
 body #navbar svg {
   width: 50px;
@@ -35,15 +41,18 @@ body #navbar svg {
 body #navbar svg path {
   fill: #ffffff;
 }
+body #navbar a {
+  color: #ffffff;
+}
 body #header {
   margin-left: 75px;
+  padding-left: 25px;
   font-size: 1.5em;
   line-height: 50px;
   background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
 }
 body #header span {
   vertical-align: middle;
-  margin-left: 25px;
 }
 body #content {
   height: calc(100% - 100px);
@@ -51,9 +60,13 @@ body #content {
 }
 body #footer {
   margin-left: 75px;
+  padding-left: 25px;
   font-size: 0.8em;
   line-height: 50px;
   background: linear-gradient(to right,#1F201C,#2F3129,#2F3129);
+}
+body #footer span {
+  margin-right: 15px;
 }
 a {
   color: #9999ff;

@@ -24,6 +24,7 @@ body {
             vertical-align: top;
             height: 50px;
             width: 50px;
+            margin: 10px 0 10px 12px;
         }
 
         .navbarText {
@@ -32,11 +33,17 @@ body {
             line-height: 50px;
             font-size: 1.5em;
             height: 50px;
-            margin-left: 25px;
+            margin: 10px 0 10px 40px;
 
             span {
                 vertical-align: middle;
             }
+        }
+
+        .navbarVerticalDivider {
+            width: @minWidthAutofold;
+            text-align: center;
+            margin: 20px 0;
         }
 
         svg {
@@ -47,17 +54,21 @@ body {
                 fill: @colorWhite;
             }
         }
+
+        a {
+            color: @colorNormalText;
+        }
     }
 
     #header {
         margin-left: @minWidthAutofold;
+        padding-left: 25px;
         font-size: 1.5em;
         line-height: 50px;
         background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
 
         span {
             vertical-align: middle;
-            margin-left: 25px;
         }
     }
 
@@ -68,9 +79,14 @@ body {
 
     #footer {
         margin-left: @minWidthAutofold;
+        padding-left: 25px;
         font-size: 0.8em;
         line-height: 50px;
         background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
+
+        span {
+            margin-right: 15px;
+        }
     }
 }
 
