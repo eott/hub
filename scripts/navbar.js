@@ -33,5 +33,13 @@ $(document).ready(function() {
         $('.imgContainer').on('mouseout', function() {
             $(this).find('.imgDesc').css('height', '3.2em');
         });
+
+        $('.documentContainer').on('mouseover', function() {
+            $(this).find('.docDesc').css('height', 'auto');
+        });
+
+        $('.documentContainer').on('mouseout', function() {
+            $(this).find('.docDesc').css('height', '4.3em');
+        });
     });
 });
