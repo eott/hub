@@ -83,8 +83,10 @@ body {
         margin-left: @minWidthAutofold;
 
         .imgContainer {
+            display: inline-block;
             width: 162px;
             padding: 5px;
+            margin: 7px 5px 0 0;
             border: 1px solid @colorBoxBorder;
 
             .imgTitle,
@@ -96,6 +98,11 @@ body {
 
             .imgTitle {
                 font-weight: 700;
+            }
+
+            .imgDesc {
+                height: 3em;
+                overflow: hidden;
             }
         }
     }

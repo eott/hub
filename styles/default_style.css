@@ -63,9 +63,11 @@ body #content {
   margin-left: 75px;
 }
 body #content .imgContainer {
+  display: inline-block;
   width: 162px;
   padding: 5px;
-  border: 1px solid #272923;
+  margin: 7px 5px 0 0;
+  border: 1px solid #606556;
 }
 body #content .imgContainer .imgTitle,
 body #content .imgContainer .imgDesc,
@@ -75,6 +77,10 @@ body #content .imgContainer .imgLicence {
 }
 body #content .imgContainer .imgTitle {
   font-weight: 700;
+}
+body #content .imgContainer .imgDesc {
+  height: 3em;
+  overflow: hidden;
 }
 body #footer {
   margin-left: 75px;
