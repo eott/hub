@@ -25,5 +25,13 @@ $(document).ready(function() {
                 $img.replaceWith($svg);
             }, 'xml');
         });
+
+        $('.imgContainer').on('mouseover', function() {
+            $(this).find('.imgDesc').css('height', 'auto');
+        });
+
+        $('.imgContainer').on('mouseout', function() {
+            $(this).find('.imgDesc').css('height', '3.2em');
+        });
     });
 });

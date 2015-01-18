@@ -84,7 +84,9 @@ body {
 
         .imgContainer {
             display: inline-block;
+            float: left;
             width: 162px;
+            height: 243px;
             padding: 5px;
             margin: 7px 5px 0 0;
             border: 1px solid @colorBoxBorder;
@@ -96,19 +98,36 @@ body {
                 width: 162px;
             }
 
+            .imgThumb {
+                z-index: 9;
+            }
+
             .imgTitle {
                 font-weight: 700;
             }
 
             .imgDesc {
+                min-height: 3.2em;
                 height: 3.2em;
                 overflow: hidden;
+                background-color: @colorLightBackground;
+                z-index: 10;
             }
+
+            .imgLicence {
+                background-color: @colorLightBackground;
+                z-index: 10;
+            }
+        }
+
+        h1 {
+            clear: both;
         }
     }
 
     #footer {
         margin-left: @minWidthAutofold;
+        clear: both;
         padding-left: 25px;
         font-size: 0.8em;
         line-height: 50px;
