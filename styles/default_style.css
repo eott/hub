@@ -62,6 +62,20 @@ body #content {
   padding: 15px 0 15px 15px;
   margin-left: 75px;
 }
+body #content .imgContainer {
+  width: 162px;
+  padding: 5px;
+  border: 1px solid #272923;
+}
+body #content .imgContainer .imgTitle,
+body #content .imgContainer .imgDesc,
+body #content .imgContainer .imgLicence {
+  text-align: center;
+  width: 162px;
+}
+body #content .imgContainer .imgTitle {
+  font-weight: 700;
+}
 body #footer {
   margin-left: 75px;
   padding-left: 25px;

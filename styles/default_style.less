@@ -2,6 +2,7 @@
 @colorDarkBackground  = #1F201C;
 @colorHyperlink       = #9999ff;
 @colorNormalText      = #ffffff;
+@colorBoxBorder       = #606556;
 @colorWhite           = #ffffff;
 
 @minWidthAutofold = 75px;
@@ -80,6 +81,23 @@ body {
         min-height: ~"calc(100% - 130px)"; // Escape the calc call, since LESS does not compile it correctly
         padding: 15px 0 15px 15px;
         margin-left: @minWidthAutofold;
+
+        .imgContainer {
+            width: 162px;
+            padding: 5px;
+            border: 1px solid @colorBoxBorder;
+
+            .imgTitle,
+            .imgDesc,
+            .imgLicence {
+                text-align: center;
+                width: 162px;
+            }
+
+            .imgTitle {
+                font-weight: 700;
+            }
+        }
     }
 
     #footer {
