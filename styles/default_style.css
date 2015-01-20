@@ -74,6 +74,7 @@ body #content .imgContainer {
 body #content .imgContainer .imgTitle,
 body #content .imgContainer .imgDesc,
 body #content .imgContainer .imgLicence {
+  position: relative;
   text-align: center;
   width: 162px;
 }
