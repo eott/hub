@@ -124,7 +124,8 @@ body #content .documentContainer .docLicence {
   background-color: #2F3129;
   z-index: 10;
 }
-body #content h1 {
+body #content h1,
+body #content h2 {
   clear: both;
 }
 body #footer {
