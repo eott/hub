@@ -12,6 +12,7 @@ body {
 body #navbar {
   white-space: nowrap;
   overflow: hidden;
+  z-index: 15;
   background-color: #1F201C;
 }
 body #navbar .navbarIcon {
