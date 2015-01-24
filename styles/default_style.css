@@ -134,6 +134,8 @@ body #content .documentContainer .docLicence {
 body #content h1,
 body #content h2 {
   clear: both;
+  margin: 0;
+  padding: 20px 0 15px 0;
 }
 body #footer {
   margin-left: 75px;
