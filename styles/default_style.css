@@ -76,6 +76,12 @@ body #content .imgContainer {
   margin: 7px 5px 0 0;
   border: 1px solid #606556;
 }
+body #content .imgContainer.hovering {
+  box-shadow: 0 0 10px 5px #606556;
+}
+body #content .imgContainer.hovering .imgDesc {
+  height: auto;
+}
 body #content .imgContainer .imgTitle,
 body #content .imgContainer .imgDesc,
 body #content .imgContainer .imgLicence {
@@ -108,6 +114,12 @@ body #content .documentContainer {
   padding: 5px;
   margin: 7px 5px 0 0;
   border: 1px solid #606556;
+}
+body #content .documentContainer.hovering {
+  box-shadow: 0 0 10px 5px #606556;
+}
+body #content .documentContainer.hovering .docDesc {
+  height: auto;
 }
 body #content .documentContainer .docTitle {
   position: relative;
