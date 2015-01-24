@@ -129,6 +129,7 @@ body #content .documentContainer .docTitle {
 }
 body #content .documentContainer .docTags {
   height: 2.5em;
+  font-style: italic;
 }
 body #content .documentContainer .docDesc {
   position: relative;
