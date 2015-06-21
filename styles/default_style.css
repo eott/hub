@@ -150,6 +150,13 @@ body #content h2 {
   margin: 0;
   padding: 20px 0 15px 0;
 }
+body #content .blogTitle {
+  padding-bottom: 0;
+}
+body #content .blogDate {
+  margin-bottom: 10px;
+  font-size: 0.8em;
+}
 body #footer {
   margin-left: 75px;
   clear: both;
