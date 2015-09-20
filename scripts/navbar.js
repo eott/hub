@@ -2,7 +2,7 @@ $(document).ready(function() {
     $(window).load(function() {
         /*
          * Replace all SVG images with inline SVG. This is useful for being able to
-         * recolor SVG images with CSS. Credit to Drew Baker for writing this gem .
+         * recolor SVG images with CSS. Credit to Drew Baker for writing this gem.
          */
         jQuery('img.svg').each(function(){
             var $img     = jQuery(this);

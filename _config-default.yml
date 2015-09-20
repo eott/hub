@@ -1,0 +1,17 @@
+title: "eott -  The collected works of some guy on the Internet"
+description: "A general hub page for everything that I want to share with the world. If something from me is not on here, it's either not worth talking about or confidential."
+author: "Etienne Ott"
+year: "2015"
+
+baseurl: "localhost/hub/_site"
+
+encoding: "utf-8"
+
+exclude: ["styles/*.less", "compile-less.php", "library/*"]
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
