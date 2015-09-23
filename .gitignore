@@ -1,3 +1,11 @@
+# Generated files
 styles/*.css
 _site
+
+# Working config file
 _config.yml
+
+# Content
+_imagery
+_posts
+assets/images
