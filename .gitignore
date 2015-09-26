@@ -8,4 +8,7 @@ _config.yml
 # Content
 _imagery
 _posts
+_written-word
+_software
 assets/images
+assets/docs
