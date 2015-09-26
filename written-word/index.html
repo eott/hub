@@ -2,70 +2,26 @@
 title: "Written Word"
 ---
 
-<h2>Nonfiction</h2>
+{% assign subcollections = "Nonfiction,Game-related,Fanfiction" | split: ',' %}
 
-<div class="documentContainer" id="parametrisierung-diffusion">
-    <div class="docTitle">Parametrisierung eines eindimensionalen Modells zur Selbstdiffusion von Polymeren</div>
-    <div class="docLink">
-        <a href="{{site.baseurl}}/assets/docs/2013-Ott-Parametrisierung-eines...-Bachelorarbeit.pdf" target="_blank">View/download in browser</a>
-    </div>
-    <div class="docTags">Modelling, Simulation, Chemistry, FRAP</div>
-    <div class="docDesc">Modelling and simulating the self-diffusion of polymers in nanoporous membranes. In such membranes the diffusion happens effectively one-dimensional, reducing the model complexity so an analytic solution is possible.</div>
-    <div class="docLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
-</div>
-
-<div class="documentContainer" id="demografie-arznei">
-    <div class="docTitle">Einfluss von Demografie auf die Verschreibungszahlen von Arzneimitteln</div>
-    <div class="docLink">
-        <a href="{{site.baseurl}}/assets/docs/2013-Ott-Einfluss_von...-Studienprojekt.pdf" target="_blank">View/download in browser</a>
-    </div>
-    <div class="docTags">Analysis, Pharmaceutical drugs, Demographic change</div>
-    <div class="docDesc">Analyzing existing records on the prescription of pharmaceuticals in different age groups. With this analysis a simple estimate of the effect of a changing demographic, towards the higher age groups, can take place. This effect is relevant for the evaluation of certain groups and individual pharmaceuticals, which are already suspected of causing significant emissions into the water cycle.</div>
-    <div class="docLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
-</div>
-
-<div class="documentContainer" id="fragmentierung-vogel">
-    <div class="docTitle">Fragmentierung von Vogelhabitaten</div>
-    <div class="docLink">
-        <a href="{{site.baseurl}}/assets/docs/2012-Puetter,Ott-Habitatfragmentierung-Projekt.pdf" target="_blank">View/download in browser</a>
-    </div>
-    <div class="docTags">Simulation, Actor model, Habitat of avians, Forestry</div>
-    <div class="docDesc">Using a simple actor based model for the habitation and reproduction behaviour of avians, simulations are run to determine the correlation of forest density to the survivability of small populations.</div>
-    <div class="docLicence">Licence under evaluation</div>
-</div>
-
-<div class="documentContainer" id="aufruhr-kollektiv">
-    <div class="docTitle">Aufruhr/Kollektives Verhalten</div>
-    <div class="docLink">
-        <a href="{{site.baseurl}}/assets/docs/2012-Graeuler,Puetter,Ott-Kollektives_Verhalten-Projekt.pdf" target="_blank">View/download in browser</a>
-    </div>
-    <div class="docTags">Modeling, Simulation, Actor model, Social unrest</div>
-    <div class="docDesc">We extend the actor based model for riots in spatially connected groups developed by Granovetter. This extension covers the distribution and connections of actors on a spatially confined grid and possible strategies for containing a riot with both passive and active intervention. We present an analysis for a corpus of simulation runs and discuss the weaknesses of the model.</div>
-    <div class="docLicence">Licence under evaluation</div>
-</div>
-
-<h2>Game-related</h2>
-
-<div class="documentContainer" id="meta">
-    <div class="docTitle">Meta</div>
-    <div class="docLink">
-        <a href="{{site.baseurl}}/assets/docs/Meta.zip" target="_blank">Download source</a>
-    </div>
-    <div class="docTags">Card game, Metagaming, Stacks</div>
-    <div class="docDesc">A card game that tries to integrate aspects of metagaming into the game itself. Players play cards on stacks (much like the data structure, as well as physical stacks of cards), that have direct effects or manipulate the composition of stacks. The game is decidedly not paradox-free.</div>
-    <div class="docLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
-</div>
-
-<h2>Fanfiction</h2>
-
-<div class="documentContainer" id="return-to-sender">
-    <div class="docTitle">Return to sender</div>
-    <div class="docLink">
-        <a href="http://www.fimfiction.net/story/124484/return-to-sender" target="_blank">Read on fimfiction.net</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="{{site.baseurl}}/assets/docs/return-to-sender.epub" target="_blank">Download epub</a>
-    </div>
-    <div class="docTags">MLP, Low Fantasy, Magical science</div>
-    <div class="docDesc">Sometimes packages are not delivered to the correct recipient. Sometimes the recipient sends the package back. Sometimes they don't. Sometimes they open the package and marvel at the contents. Sometimes a single package can change the technological advance of an entire nation. Sometimes Twilight Sparkle should be content to not know things.</div>
-    <div class="docLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
-</div>
+{% for subcollection in subcollections %}
+<h2>{{subcollection}}</h2>
+    {% assign docs = site.written-word | sort: 'date' | reverse %}
+    {% for doc in docs %}
+        {% if doc.subcollection == subcollection %}
+            <div class="documentContainer" id="{{doc.slug}}">
+                <div class="docTitle">{{doc.title}}</div>
+                <div class="docLink">
+                    <a href="{{site.baseurl}}/assets/docs/{{doc.internal-link}}" target="_blank">{{doc.internal-cta}}</a>
+                    {% if doc.external-link != 'none' %}
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="{{doc.external-link}}" target="_blank">{{doc.external-cta}}</a>
+                    {% endif %}
+                </div>
+                <div class="docTags">{{doc.tags}}</div>
+                <div class="docDesc">{{doc.description}}</div>
+                <div class="docLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}

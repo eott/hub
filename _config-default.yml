@@ -10,7 +10,7 @@ encoding: "utf-8"
 exclude: ["styles/*.less", "compile-less.php", "library/*"]
 
 collections:
-  - imagery
+  - ["imagery", "written-word"]
 
 defaults:
   -
