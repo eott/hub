@@ -140,6 +140,9 @@ body #content .documentContainer .docDesc {
   background-color: #2F3129;
   z-index: 10;
 }
+body #content .documentContainer .docLink a:nth-child(n+2) {
+  margin-left: 20px;
+}
 body #content .documentContainer .docLicence {
   background-color: #2F3129;
   z-index: 10;

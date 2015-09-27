@@ -7,14 +7,17 @@ title: "Written Word"
 {% for subcollection in subcollections %}
 <h2>{{subcollection}}</h2>
     {% assign docs = site.written-word | sort: 'date' | reverse %}
+
     {% for doc in docs %}
         {% if doc.subcollection == subcollection %}
             <div class="documentContainer" id="{{doc.slug}}">
                 <div class="docTitle">{{doc.title}}</div>
                 <div class="docLink">
-                    <a href="{{site.baseurl}}/assets/docs/{{doc.internal-link}}" target="_blank">{{doc.internal-cta}}</a>
+                    {% if doc.internal-link != 'none' %}
+                        <a href="{{site.baseurl}}/{{doc.internal-link}}" target="_blank">{{doc.internal-cta}}</a>
+                    {% endif %}
+
                     {% if doc.external-link != 'none' %}
-                        &nbsp;&nbsp;&nbsp;
                         <a href="{{doc.external-link}}" target="_blank">{{doc.external-cta}}</a>
                     {% endif %}
                 </div>
@@ -24,4 +27,5 @@ title: "Written Word"
             </div>
         {% endif %}
     {% endfor %}
+
 {% endfor %}

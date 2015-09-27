@@ -18,10 +18,6 @@ title: "Software"
                     {% endif %}
 
                     {% if doc.external-link != 'none' %}
-                        {% if doc.internal-link != 'none' %}
-                            &nbsp;&nbsp;&nbsp;
-                        {% endif %}
-
                         <a href="{{doc.external-link}}" target="_blank">{{doc.external-cta}}</a>
                     {% endif %}
                 </div>
