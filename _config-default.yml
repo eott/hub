@@ -3,14 +3,16 @@ description: "A general hub page for everything that I want to share with the wo
 author: "Etienne Ott"
 year: "2015"
 
-baseurl: "localhost/hub/_site"
+baseurl: "http://localhost/hub/_site"
 
 encoding: "utf-8"
 
 exclude: ["styles/*.less", "compile-less.php", "library/*"]
 
 collections:
-  - ["imagery", "written-word"]
+  - imagery
+  - written-word
+  - software
 
 defaults:
   -
