@@ -7,16 +7,26 @@ title: Imagery
 {% for subcollection in subcollections %}
 <h2>{{subcollection}}</h2>
     {% assign images = site.imagery | sort: 'date' | reverse %}
+
     {% for img in images %}
         {% if img.subcollection == subcollection %}
             <div class="imgContainer" id="{{img.slug}}">
                 <a target="_blank" href="{{site.baseurl}}/assets/images/{{subcollection}}/{{img.slug}}.{{img.extension}}">
                     <img class="imgThumb" src="{{site.baseurl}}/assets/images/{{subcollection}}/thumb/{{img.slug}}.{{img.extension}}" alt="{{img.title}}"/>
                 </a>
+
                 <div class="imgTitle">{{img.title}}</div>
                 <div class="imgDesc">{{img.description}}</div>
-                <div class="imgLicence"><a target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+
+                {% if img.licence == 'ccsa4' %}
+                    <div class="docLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+                {% else if img.licence == 'pd' %}
+                    <div class="docLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
+                {% else %}
+                    <div class="docLicence">Licence under evaluation</div>
+                {% endif %}
             </div>
         {% endif %}
     {% endfor %}
+
 {% endfor %}
