@@ -67,44 +67,45 @@ body #content {
   padding: 15px 0 15px 15px;
   margin-left: 75px;
 }
-body #content .imgContainer {
-  display: inline-block;
+body #content .imgPlacement {
   float: left;
-  width: 162px;
+  width: 170px;
   height: 243px;
-  padding: 5px;
-  margin: 7px 5px 0 0;
-  border: 1px solid #606556;
+  margin: 20px 10px 0 0;
+  position: relative;
 }
-body #content .imgContainer.hovering {
+body #content .imgPlacement.hovering .imgContainer {
   box-shadow: 0 0 10px 5px #606556;
-}
-body #content .imgContainer.hovering .imgDesc {
   height: auto;
 }
-body #content .imgContainer .imgTitle,
-body #content .imgContainer .imgDesc,
-body #content .imgContainer .imgLicence {
+body #content .imgPlacement.hovering .imgDesc {
+  height: auto;
+}
+body #content .imgContainer {
+  border: 1px solid #606556;
+  background-color: #2F3129;
+  width: 160px;
+  height: 243px;
+  padding: 5px;
+}
+body #content .imgTitle,
+body #content .imgDesc,
+body #content .imgLicence {
   position: relative;
   text-align: center;
   width: 162px;
 }
-body #content .imgContainer .imgThumb {
-  z-index: 9;
-}
-body #content .imgContainer .imgTitle {
+body #content .imgTitle {
   font-weight: 700;
 }
-body #content .imgContainer .imgDesc {
+body #content .imgDesc {
   min-height: 3.2em;
   height: 3.2em;
   overflow: hidden;
   background-color: #2F3129;
-  z-index: 10;
 }
-body #content .imgContainer .imgLicence {
+body #content .imgLicence {
   background-color: #2F3129;
-  z-index: 10;
 }
 body #content .documentContainer {
   display: inline-block;

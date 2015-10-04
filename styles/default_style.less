@@ -88,51 +88,53 @@ body {
         padding: 15px 0 15px 15px;
         margin-left: @minWidthAutofold;
 
-        .imgContainer {
-            display: inline-block;
+        .imgPlacement {
             float: left;
-            width: 162px;
+            width: 170px;
             height: 243px;
-            padding: 5px;
-            margin: 7px 5px 0 0;
-            border: 1px solid @colorBoxBorder;
+            margin: 20px 10px 0 0;
+            position: relative; // This seems to be unnecessary with float, but required for a box-shadow-z-index bug
 
             &.hovering {
-                box-shadow: 0 0 10px 5px @colorBoxBorder;
+                .imgContainer {
+                    box-shadow: 0 0 10px 5px @colorBoxBorder;
+                    height: auto;
+                }
 
                 .imgDesc {
                     height: auto;
                 }
             }
+        }
 
-            .imgTitle,
-            .imgDesc,
-            .imgLicence {
-                position: relative;
-                text-align: center;
-                width: 162px;
-            }
+        .imgContainer {
+            border: 1px solid @colorBoxBorder;
+            background-color: @colorLightBackground;
+            width: 160px;
+            height: 243px;
+            padding: 5px;
+        }
 
-            .imgThumb {
-                z-index: 9;
-            }
+        .imgTitle,
+        .imgDesc,
+        .imgLicence {
+            position: relative;
+            text-align: center;
+            width: 162px;
+        }
+        .imgTitle {
+            font-weight: 700;
+        }
 
-            .imgTitle {
-                font-weight: 700;
-            }
+        .imgDesc {
+            min-height: 3.2em;
+            height: 3.2em;
+            overflow: hidden;
+            background-color: @colorLightBackground;
+        }
 
-            .imgDesc {
-                min-height: 3.2em;
-                height: 3.2em;
-                overflow: hidden;
-                background-color: @colorLightBackground;
-                z-index: 10;
-            }
-
-            .imgLicence {
-                background-color: @colorLightBackground;
-                z-index: 10;
-            }
+        .imgLicence {
+            background-color: @colorLightBackground;
         }
 
         .documentContainer {
