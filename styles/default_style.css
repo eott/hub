@@ -70,17 +70,17 @@ body #content {
 body #content .cardPlacement {
   float: left;
   width: 170px;
-  height: 243px;
+  height: 275px;
   margin: 20px 10px 0 0;
   position: relative;
 }
 body #content .cardPlacement.document {
   width: 300px;
-  height: 160px;
+  height: 196px;
 }
 body #content .cardPlacement.document .cardContainer {
-  width: 290px;
-  height: 150px;
+  width: 300px;
+  height: 196px;
 }
 body #content .cardPlacement.document .cardDesc,
 body #content .cardPlacement.document .cardLicence {
@@ -102,31 +102,40 @@ body #content .cardPlacement.hovering .cardDesc {
 body #content .cardContainer {
   border: 1px solid #606556;
   background-color: #2F3129;
-  width: 160px;
-  height: 243px;
-  padding: 5px;
+  width: 170px;
+  height: 275px;
 }
 body #content .cardTitle,
 body #content .cardDesc,
 body #content .cardLicence {
   position: relative;
   text-align: center;
+  padding: 5px;
+}
+body #content .cardThumb {
+  margin: 5px 0 0 5px;
 }
 body #content .cardTitle {
   font-weight: 700;
+  background-color: #3B3E34;
 }
 body #content .cardTags {
   height: 2.5em;
   font-style: italic;
+  padding: 5px;
+  background-color: #3B3E34;
 }
 body #content .cardDesc {
-  min-height: 3.2em;
-  height: 3.2em;
+  min-height: 2.9em;
+  height: 2.9em;
   overflow: hidden;
   background-color: #2F3129;
 }
 body #content .cardLicence {
-  background-color: #2F3129;
+  background-color: #3B3E34;
+}
+body #content .cardLink {
+  padding: 5px;
 }
 body #content .cardLink a:nth-child(n+2) {
   margin-left: 20px;

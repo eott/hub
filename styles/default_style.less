@@ -1,9 +1,10 @@
-@colorLightBackground = #2F3129;
-@colorDarkBackground  = #1F201C;
-@colorHyperlink       = #9999ff;
-@colorNormalText      = #ffffff;
-@colorBoxBorder       = #606556;
-@colorWhite           = #ffffff;
+@colorLightBackground     = #2F3129;
+@colorDarkBackground      = #1F201C;
+@colorCardLightBackground = #3B3E34;
+@colorHyperlink           = #9999ff;
+@colorNormalText          = #ffffff;
+@colorBoxBorder           = #606556;
+@colorWhite               = #ffffff;
 
 @minWidthAutofold = 75px;
 
@@ -91,17 +92,17 @@ body {
         .cardPlacement {
             float: left;
             width: 170px;
-            height: 243px;
+            height: 275px;
             margin: 20px 10px 0 0;
             position: relative; // This seems to be unnecessary with float, but required for a box-shadow-z-index bug
 
             &.document {
                 width: 300px;
-                height: 160px;
+                height: 196px;
 
                 .cardContainer {
-                    width: 290px;
-                    height: 150px;
+                    width: 300px;
+                    height: 196px;
                 }
 
                 .cardDesc,
@@ -133,9 +134,8 @@ body {
         .cardContainer {
             border: 1px solid @colorBoxBorder;
             background-color: @colorLightBackground;
-            width: 160px;
-            height: 243px;
-            padding: 5px;
+            width: 170px;
+            height: 275px;
         }
 
         .cardTitle,
@@ -143,29 +143,39 @@ body {
         .cardLicence {
             position: relative;
             text-align: center;
+            padding: 5px;
+        }
+
+        .cardThumb {
+            margin: 5px 0 0 5px;
         }
 
         .cardTitle {
             font-weight: 700;
+            background-color: @colorCardLightBackground;
         }
 
         .cardTags {
             height: 2.5em;
             font-style: italic;
+            padding: 5px;
+            background-color: @colorCardLightBackground;
         }
 
         .cardDesc {
-            min-height: 3.2em;
-            height: 3.2em;
+            min-height: 2.9em;
+            height: 2.9em;
             overflow: hidden;
             background-color: @colorLightBackground;
         }
 
         .cardLicence {
-            background-color: @colorLightBackground;
+            background-color: @colorCardLightBackground;
         }
 
         .cardLink {
+            padding: 5px;
+
             a:nth-child(n+2) {
                 margin-left: 20px;
             }
