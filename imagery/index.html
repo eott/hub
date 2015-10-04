@@ -13,21 +13,21 @@ title: Imagery
         {% if img.subcollection == subcollection %}
             {% assign zindex = zindex | minus: 1 %}
 
-            <div class="imgPlacement" style="z-index: {{zindex}}">
-                <div class="imgContainer" id="{{img.slug}}">
+            <div class="cardPlacement" style="z-index: {{zindex}}">
+                <div class="cardContainer" id="{{img.slug}}">
                     <a target="_blank" href="{{site.baseurl}}/assets/images/{{subcollection}}/{{img.slug}}.{{img.extension}}">
-                        <img class="imgThumb" src="{{site.baseurl}}/assets/images/{{subcollection}}/thumb/{{img.slug}}.{{img.extension}}" alt="{{img.title}}"/>
+                        <img class="cardThumb" src="{{site.baseurl}}/assets/images/{{subcollection}}/thumb/{{img.slug}}.{{img.extension}}" alt="{{img.title}}"/>
                     </a>
 
-                    <div class="imgTitle">{{img.title}}</div>
-                    <div class="imgDesc">{{img.description}}</div>
+                    <div class="cardTitle">{{img.title}}</div>
+                    <div class="cardDesc">{{img.description}}</div>
 
                     {% if img.licence == 'ccsa4' %}
-                        <div class="imgLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+                        <div class="cardLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
                     {% else if img.licence == 'pd' %}
-                        <div class="imgLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
+                        <div class="cardLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
                     {% else %}
-                        <div class="imgLicence">Licence under evaluation</div>
+                        <div class="cardLicence">Licence under evaluation</div>
                     {% endif %}
                 </div>
             </div>

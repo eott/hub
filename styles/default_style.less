@@ -88,26 +88,49 @@ body {
         padding: 15px 0 15px 15px;
         margin-left: @minWidthAutofold;
 
-        .imgPlacement {
+        .cardPlacement {
             float: left;
             width: 170px;
             height: 243px;
             margin: 20px 10px 0 0;
             position: relative; // This seems to be unnecessary with float, but required for a box-shadow-z-index bug
 
+            &.document {
+                width: 300px;
+                height: 160px;
+
+                .cardContainer {
+                    width: 290px;
+                    height: 150px;
+                }
+
+                .cardDesc,
+                .cardLicence {
+                    text-align: left;
+                }
+
+                .cardTitle {
+                    height: 2.5em;
+                }
+
+                &.hovering .cardContainer { // Duplicated from below, but otherwise the fixed height
+                    height: auto;           // of .cardPlacement.document would overwrite it
+                }
+            }
+
             &.hovering {
-                .imgContainer {
+                .cardContainer {
                     box-shadow: 0 0 10px 5px @colorBoxBorder;
                     height: auto;
                 }
 
-                .imgDesc {
+                .cardDesc {
                     height: auto;
                 }
             }
         }
 
-        .imgContainer {
+        .cardContainer {
             border: 1px solid @colorBoxBorder;
             background-color: @colorLightBackground;
             width: 160px;
@@ -115,76 +138,36 @@ body {
             padding: 5px;
         }
 
-        .imgTitle,
-        .imgDesc,
-        .imgLicence {
+        .cardTitle,
+        .cardDesc,
+        .cardLicence {
             position: relative;
             text-align: center;
-            width: 162px;
         }
-        .imgTitle {
+
+        .cardTitle {
             font-weight: 700;
         }
 
-        .imgDesc {
+        .cardTags {
+            height: 2.5em;
+            font-style: italic;
+        }
+
+        .cardDesc {
             min-height: 3.2em;
             height: 3.2em;
             overflow: hidden;
             background-color: @colorLightBackground;
         }
 
-        .imgLicence {
+        .cardLicence {
             background-color: @colorLightBackground;
         }
 
-        .documentContainer {
-            display: inline-block;
-            width: 300px;
-            height: 175px;
-            float: left;
-            padding: 5px;
-            margin: 7px 5px 0 0;
-            border: 1px solid @colorBoxBorder;
-
-            &.hovering {
-                box-shadow: 0 0 10px 5px @colorBoxBorder;
-
-                .docDesc {
-                    height: auto;
-                }
-            }
-
-            .docTitle {
-                position: relative;
-                text-align: center;
-                font-weight: 700;
-                height: 2.5em;
-            }
-
-            .docTags {
-                height: 2.5em;
-                font-style: italic;
-            }
-
-            .docDesc {
-                position: relative;
-                padding: 5px 0;
-                min-height: 4.2em;
-                height: 4.3em;
-                overflow: hidden;
-                background-color: @colorLightBackground;
-                z-index: 10;
-            }
-
-            .docLink {
-                a:nth-child(n+2) {
-                    margin-left: 20px;
-                }
-            }
-
-            .docLicence {
-                background-color: @colorLightBackground;
-                z-index: 10;
+        .cardLink {
+            a:nth-child(n+2) {
+                margin-left: 20px;
             }
         }
 

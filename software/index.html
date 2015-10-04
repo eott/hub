@@ -10,29 +10,31 @@ title: "Software"
 
     {% for doc in docs %}
         {% if doc.subcollection == subcollection %}
-            <div class="documentContainer" id="{{doc.slug}}">
-                <div class="docTitle">{{doc.title}}</div>
+            <div class="cardPlacement document">
+                <div class="cardContainer" id="{{doc.slug}}">
+                    <div class="cardTitle">{{doc.title}}</div>
 
-                <div class="docLink">
-                    {% if doc.internal-link != 'none' %}
-                        <a href="{{site.baseurl}}/{{doc.internal-link}}" target="_blank">{{doc.internal-cta}}</a>
-                    {% endif %}
+                    <div class="cardLink">
+                        {% if doc.internal-link != 'none' %}
+                            <a href="{{site.baseurl}}/{{doc.internal-link}}" target="_blank">{{doc.internal-cta}}</a>
+                        {% endif %}
 
-                    {% if doc.external-link != 'none' %}
-                        <a href="{{doc.external-link}}" target="_blank">{{doc.external-cta}}</a>
+                        {% if doc.external-link != 'none' %}
+                            <a href="{{doc.external-link}}" target="_blank">{{doc.external-cta}}</a>
+                        {% endif %}
+                    </div>
+
+                    <div class="cardTags">{{doc.tags}}</div>
+                    <div class="cardDesc">{{doc.description}}</div>
+
+                    {% if doc.licence == 'ccsa4' %}
+                        <div class="cardLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+                    {% else if doc.licence == 'pd' %}
+                        <div class="cardLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
+                    {% else %}
+                        <div class="cardLicence">Licence under evaluation</div>
                     {% endif %}
                 </div>
-
-                <div class="docTags">{{doc.tags}}</div>
-                <div class="docDesc">{{doc.description}}</div>
-
-                {% if doc.licence == 'ccsa4' %}
-                    <div class="docLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
-                {% else if doc.licence == 'pd' %}
-                    <div class="docLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
-                {% else %}
-                    <div class="docLicence">Licence under evaluation</div>
-                {% endif %}
             </div>
         {% endif %}
     {% endfor %}
