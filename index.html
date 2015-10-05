@@ -13,39 +13,20 @@ title: Home
 
 <h2>Blog</h2>
 
+{% for post in site.posts %}
 <div class="blogPost">
-    <h3 class="blogTitle">A small content update</h3>
-    <div class="blogDate">21.06.2015</div>
-    <div class="blogText">
-        [Insert apology about how I don't update this "blog" quite as much as blogs are supposed
-        to update, despite the fact that I never intended it to be anything other than a place
-        to post updates for this site and that I'm not really a blogging person.]<br/>
-        <br/>
-        So here are a few new things you can check out:
-        <ul>
-            <li>Software: <a href="{{site.baseurl}}/software#iff">IFF</a></li>
-            <li>Software: <a href="{{site.baseurl}}/software#mandelrust">Mandelrust</a></li>
-            <li>Software: <a href="{{site.baseurl}}/software#warp-zone">Warp zone</a></li>
-            <li>Software: <a href="{{site.baseurl}}/software#featherlib-ebooker">Featherlib ebooker</a></li>
-        </ul>
-    </div>
-</div>
+    <h3 class="blogTitle">{{post.title}}</h3>
 
-<div class="blogPost">
-    <h3 class="blogTitle">All systems nominal, we are go for launch</h3>
-    <div class="blogDate">25.01.2015</div>
+    <div class="blogDate">{{post.date | date: '%d.%m.%Y'}}</div>
+
+    <div class="blogPermalink">
+        <a href="{{site.baseurl}}{{post.url}}">
+            Permalink
+        </a>
+    </div>
+
     <div class="blogText">
-        No, hold up! Communications? Communications, are we go? Hey, can someone wake up Communications? <br/>
-        You awake now? Great, let's do this again.<br/>
-        Flight coordinator? - Go!<br/>
-        Engineering? - Go!<br/>
-        Communications? - Comm... - Go!<br/>
-        Catering? - Go!<br/>
-        Vehicle Crew?  - Go!<br/>
-        Weather? - Go!<br/>
-        Safety Monitor? - Go!<br/>
-        Alright, we don't have all day, just launch the damn thing.<br/>
-        <span style="font-style: italic;">INITIATING COUNTDOWN. COUNTDOWN LIVE. 60 SECONDS TO LAUNCH. 58. 57. 56. 55. 54. COMMAND OVERRIDE. 10 SECONDS TO LAUNCH. 9. 8. 7. 6. 5 SECONDS TO LAUNCH. 3. 2. 1. LAUNCH INITIATED.</span><br/>
-        We have liftoff, Gentlemen!
+        {{post.content}}
     </div>
 </div>
+{% endfor %}
