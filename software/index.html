@@ -7,10 +7,13 @@ title: "Software"
 {% for subcollection in subcollections %}
 <h2>{{subcollection}}</h2>
     {% assign docs = site.software | sort: 'date' | reverse %}
+    {% assign zindex = 10000 %}
 
     {% for doc in docs %}
         {% if doc.subcollection == subcollection %}
-            <div class="cardPlacement document">
+            {% assign zindex = zindex | minus: 1 %}
+
+            <div class="cardPlacement document" style="z-index: {{zindex}}">
                 <div class="cardContainer" id="{{doc.slug}}">
                     <div class="cardTitle">{{doc.title}}</div>
 
