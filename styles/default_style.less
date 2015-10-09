@@ -4,6 +4,7 @@
 @colorHyperlink           = #9999ff;
 @colorNormalText          = #ffffff;
 @colorBoxBorder           = #606556;
+@colorBoxShadow           = #070806;
 @colorWhite               = #ffffff;
 
 @minWidthAutofold = 75px;
@@ -181,20 +182,35 @@ body {
             }
         }
 
-        h1,
-        h2 {
-            clear: both;
-            margin: 0;
-            padding: 20px 0 15px 0;
+        .blogPost {
+            max-width: 600px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid @colorBoxBorder;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px 0px @colorBoxShadow;
         }
 
         .blogTitle {
-            padding-bottom: 0;
+            margin-top: 0;
         }
 
         .blogDate {
             margin-bottom: 10px;
             font-size: 0.8em;
+            display: inline-block;
+        }
+
+        .blogPermalink {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        h1,
+        h2 {
+            clear: both;
+            margin: 0;
+            padding: 20px 0 15px 0;
         }
     }
 

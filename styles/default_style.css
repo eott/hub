@@ -140,18 +140,31 @@ body #content .cardLink {
 body #content .cardLink a:nth-child(n+2) {
   margin-left: 20px;
 }
+body #content .blogPost {
+  max-width: 600px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #606556;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 0px #070806;
+}
+body #content .blogTitle {
+  margin-top: 0;
+}
+body #content .blogDate {
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  display: inline-block;
+}
+body #content .blogPermalink {
+  display: inline-block;
+  margin-left: 20px;
+}
 body #content h1,
 body #content h2 {
   clear: both;
   margin: 0;
   padding: 20px 0 15px 0;
-}
-body #content .blogTitle {
-  padding-bottom: 0;
-}
-body #content .blogDate {
-  margin-bottom: 10px;
-  font-size: 0.8em;
 }
 body #footer {
   margin-left: 75px;
