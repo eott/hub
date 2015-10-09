@@ -2,8 +2,9 @@
 styles/*.css
 _site
 
-# Working config file
+# Working config/build files
 _config.yml
+build.bat
 
 # Content
 _imagery

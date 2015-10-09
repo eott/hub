@@ -7,7 +7,7 @@ baseurl: "http://localhost/hub/_site"
 
 encoding: "utf-8"
 
-exclude: ["styles/*.less", "compile-less.php", "library/*"]
+exclude: ["styles/*.less", "compile-less.php", "build.bat", "build-default.bat", "library/*"]
 
 collections:
   - imagery
