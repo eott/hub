@@ -208,18 +208,21 @@ body {
             margin-left: 20px;
         }
 
-        .newEntryList {
-            padding: 0;
-            font-size: 0; // Necessary to hide the whitespace between list entries
+        #newEntryWrapper {
+            position: relative;
             max-width: 600px;
             width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
         }
 
-        .newEntryPrevious,
-        .newEntryNext {
+        #newEntryList {
+            padding: 0;
+            font-size: 0; // Necessary to hide the whitespace between list entries
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #newEntryPrevious,
+        #newEntryNext {
             position: absolute;
             top: 0;
             height: 90px;
@@ -241,7 +244,7 @@ body {
             }
         }
 
-        .newEntryNext {
+        #newEntryNext {
             right: 0;
         }
 

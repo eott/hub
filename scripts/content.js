@@ -9,5 +9,15 @@ $(document).ready(function() {
         $('.cardPlacement').on('mouseout', function() {
             $(this).removeClass('hovering');
         });
+
+        // Simple slider logic: Cut off elements from the front/back
+        // and append/prepend them on the other end
+        $('#newEntryPrevious').on('click', function() {
+            $('#newEntryList li:last-child').prependTo($('#newEntryList'));
+        });
+
+        $('#newEntryNext').on('click', function() {
+            $('#newEntryList li:first-child').appendTo($('#newEntryList'));
+        });
     });
 });

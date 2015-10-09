@@ -4,55 +4,57 @@ title: Home
 
 <h2>Newest entries</h2>
 
-<ul class="newEntryList">
-    <div class="newEntryPrevious">&lt;</div>
-    <div class="newEntryNext">&gt;</div>
+<div id="newEntryWrapper">
+    <ul id="newEntryList">
+        {% assign docs = site.software | sort: 'date' | reverse %}
+        {% for doc in docs limit:2 %}
+            <li class="newEntry">
+                <a href="{{site.baseurl}}/software#{{doc.slug}}">
+                    <img class="newEntryImg icon svg"
+                        src="{{site.baseurl}}/assets/icons/computer.svg"
+                        alt="computer"
+                    />
+                </a>
+                <a href="{{site.baseurl}}/software#{{doc.slug}}">
+                    <div class="newEntryTitle">{{doc.title}}</div>
+                </a>
+            </li>
+        {% endfor %}
 
-    {% assign docs = site.software | sort: 'date' | reverse %}
-    {% for doc in docs limit:2 %}
-        <li class="newEntry">
-            <a href="{{site.baseurl}}/software#{{doc.slug}}">
-                <img class="newEntryImg icon svg"
-                    src="{{site.baseurl}}/assets/icons/computer.svg"
-                    alt="computer"
-                />
-            </a>
-            <a href="{{site.baseurl}}/software#{{doc.slug}}">
-                <div class="newEntryTitle">{{doc.title}}</div>
-            </a>
-        </li>
-    {% endfor %}
+        {% assign images = site.imagery | sort: 'date' | reverse %}
+        {% for img in images limit:2 %}
+            <li class="newEntry">
+                <a href="{{site.baseurl}}/imagery#{{img.slug}}">
+                    <img class="newEntryImg"
+                        src="{{site.baseurl}}/assets/images/{{img.subcollection}}/thumb/{{img.slug}}.{{img.extension}}"
+                        alt="{{img.title}}"
+                    />
+                </a>
+                <a href="{{site.baseurl}}/imagery#{{img.slug}}">
+                    <div class="newEntryTitle">{{img.title}}</div>
+                </a>
+            </li>
+        {% endfor %}
 
-    {% assign images = site.imagery | sort: 'date' | reverse %}
-    {% for img in images limit:2 %}
-        <li class="newEntry">
-            <a href="{{site.baseurl}}/imagery#{{img.slug}}">
-                <img class="newEntryImg"
-                    src="{{site.baseurl}}/assets/images/{{img.subcollection}}/thumb/{{img.slug}}.{{img.extension}}"
-                    alt="{{img.title}}"
-                />
-            </a>
-            <a href="{{site.baseurl}}/imagery#{{img.slug}}">
-                <div class="newEntryTitle">{{img.title}}</div>
-            </a>
-        </li>
-    {% endfor %}
+        {% assign docs = site.written-word | sort: 'date' | reverse %}
+        {% for doc in docs limit:2 %}
+            <li class="newEntry">
+                <a href="{{site.baseurl}}/written-word#{{doc.slug}}">
+                    <img class="newEntryImg icon svg"
+                        src="{{site.baseurl}}/assets/icons/textpage.svg"
+                        alt="textpage"
+                    />
+                </a>
+                <a href="{{site.baseurl}}/written-word#{{doc.slug}}">
+                    <div class="newEntryTitle">{{doc.title}}</div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 
-    {% assign docs = site.written-word | sort: 'date' | reverse %}
-    {% for doc in docs limit:2 %}
-        <li class="newEntry">
-            <a href="{{site.baseurl}}/written-word#{{doc.slug}}">
-                <img class="newEntryImg icon svg"
-                    src="{{site.baseurl}}/assets/icons/textpage.svg"
-                    alt="textpage"
-                />
-            </a>
-            <a href="{{site.baseurl}}/written-word#{{doc.slug}}">
-                <div class="newEntryTitle">{{doc.title}}</div>
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+    <div id="newEntryPrevious">&lt;</div>
+    <div id="newEntryNext">&gt;</div>
+</div>
 
 <h2>Blog</h2>
 

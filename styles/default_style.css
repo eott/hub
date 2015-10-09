@@ -160,17 +160,19 @@ body #content .blogPermalink {
   display: inline-block;
   margin-left: 20px;
 }
-body #content .newEntryList {
-  padding: 0;
-  font-size: 0;
+body #content #newEntryWrapper {
+  position: relative;
   max-width: 600px;
   width: 100%;
+}
+body #content #newEntryList {
+  padding: 0;
+  font-size: 0;
   overflow: hidden;
   white-space: nowrap;
-  position: relative;
 }
-body #content .newEntryPrevious,
-body #content .newEntryNext {
+body #content #newEntryPrevious,
+body #content #newEntryNext {
   position: absolute;
   top: 0;
   height: 90px;
@@ -187,11 +189,11 @@ body #content .newEntryNext {
   -ms-user-select: none;
   user-select: none;
 }
-body #content .newEntryPrevious:hover,
-body #content .newEntryNext:hover {
+body #content #newEntryPrevious:hover,
+body #content #newEntryNext:hover {
   background-color: rgba(255,255,255,0.5);
 }
-body #content .newEntryNext {
+body #content #newEntryNext {
   right: 0;
 }
 body #content .newEntry {
