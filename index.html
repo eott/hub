@@ -2,13 +2,38 @@
 title: Home
 ---
 
-<h2>New entries</h2>
+<h2>Newest entries</h2>
 
 <ul class="newEntryList">
-    <li>Software: <a href="{{site.baseurl}}/software#iff">IFF</a></li>
-    <li>Software: <a href="{{site.baseurl}}/software#warp-zone">Warp zone</a></li>
-    <li>Written Word: <a href="{{site.baseurl}}/written-word#meta">Meta</a></li>
-    <li>Imagery: <a href="{{site.baseurl}}/imagery#royal-houses">The royal houses</a></li>
+    {% assign images = site.imagery | sort: 'date' | reverse %}
+    {% for img in images limit:2 %}
+        <li class="newEntry">
+            <a href="{{site.baseurl}}/imagery#{{img.slug}}">
+                <img class="newEntryImg"
+                    src="{{site.baseurl}}/assets/images/{{img.subcollection}}/thumb/{{img.slug}}.{{img.extension}}"
+                    alt="{{img.title}}"
+                />
+            </a>
+        </li>
+    {% endfor %}
+
+    {% assign docs = site.written-word | sort: 'date' | reverse %}
+    {% for doc in docs limit:2 %}
+        <li class="newEntry">
+            <a href="{{site.baseurl}}/written-word#{{doc.slug}}">
+                {{doc.title}}
+            </a>
+        </li>
+    {% endfor %}
+
+    {% assign docs = site.software | sort: 'date' | reverse %}
+    {% for doc in docs limit:2 %}
+        <li class="newEntry">
+            <a href="{{site.baseurl}}/software#{{doc.slug}}">
+                {{doc.title}}
+            </a>
+        </li>
+    {% endfor %}
 </ul>
 
 <h2>Blog</h2>
