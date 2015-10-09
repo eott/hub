@@ -1,11 +1,13 @@
-@colorLightBackground     = #2F3129;
-@colorDarkBackground      = #1F201C;
-@colorCardLightBackground = #3B3E34;
-@colorHyperlink           = #9999ff;
-@colorNormalText          = #ffffff;
-@colorBoxBorder           = #606556;
-@colorBoxShadow           = #070806;
-@colorWhite               = #ffffff;
+@colorLightBackground      = #2F3129;
+@colorDarkBackground       = #1F201C;
+@colorCardLightBackground  = #3B3E34;
+@colorHyperlink            = #9999ff;
+@colorNormalText           = #ffffff;
+@colorBoxBorder            = #606556;
+@colorBoxShadow            = #070806;
+@colorWhite                = #ffffff;
+@colorWhiteVeryTransparent = rgba(255, 255, 255, 0.1);
+@colorWhiteHalfTransparent = rgba(255, 255, 255, 0.5);
 
 @minWidthAutofold = 75px;
 
@@ -204,6 +206,85 @@ body {
         .blogPermalink {
             display: inline-block;
             margin-left: 20px;
+        }
+
+        .newEntryList {
+            padding: 0;
+            font-size: 0; // Necessary to hide the whitespace between list entries
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .newEntryPrevious,
+        .newEntryNext {
+            position: absolute;
+            top: 0;
+            height: 90px;
+            width: 30px;
+            background-color: @colorWhiteVeryTransparent;
+            text-align: center;
+            padding-top: 60px;
+            cursor: pointer;
+            font-size: 25px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            &:hover {
+                background-color: @colorWhiteHalfTransparent;
+            }
+        }
+
+        .newEntryNext {
+            right: 0;
+        }
+
+        .newEntry {
+            list-style: none;
+            display: inline-block;
+            width: 130px;
+            height: 150px;
+            padding: 0 10px;
+            vertical-align: top;
+            border: 1px solid @colorCardLightBackground;
+            max-width: 600px;
+
+            &:nth-child(2n) {
+                background-color: @colorCardLightBackground;
+            }
+        }
+
+        .newEntryImg {
+            width: 110px;
+            height: 110px;
+            margin: 10px 0 0 10px;
+
+            &.icon {
+                width: 90px;
+                height: 90px;
+                margin: 20px 0 10px 20px;
+
+                path {
+                    fill: @colorWhite;
+                }
+            }
+        }
+
+        .newEntryTitle {
+            font-size: 13px;
+            width: 130px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            margin-top: 5px;
+            vertica-align: top;
         }
 
         h1,
