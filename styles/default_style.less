@@ -102,11 +102,11 @@ body {
 
             &.document {
                 width: 300px;
-                height: 196px;
+                height: 179px;
 
                 .cardContainer {
                     width: 300px;
-                    height: 196px;
+                    height: 179px;
                 }
 
                 .cardDesc {
@@ -121,11 +121,15 @@ body {
                 }
 
                 .cardTitle {
-                    height: 2.5em;
+                    height: 1.3em;
                 }
 
                 &.hovering .cardContainer { // Duplicated from below, but otherwise the fixed height
                     height: auto;           // of .cardPlacement.document would overwrite it
+                }
+
+                &.hovering .cardTitle {
+                    height: auto;           // Ditto
                 }
             }
 
@@ -133,6 +137,12 @@ body {
                 .cardContainer {
                     box-shadow: 0 0 10px 5px @colorBoxBorder;
                     height: auto;
+                }
+
+                .cardTitle {
+                    white-space: normal;
+                    overflow: visible;
+                    text-overflow: initial;
                 }
 
                 .cardDesc {
@@ -162,6 +172,9 @@ body {
         .cardTitle {
             font-weight: 700;
             background-color: @colorCardLightBackground;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .cardTags {
