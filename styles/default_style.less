@@ -109,8 +109,14 @@ body {
                     height: 196px;
                 }
 
-                .cardDesc,
+                .cardDesc {
+                    text-align: left;
+                }
+
                 .cardLicence {
+                    float: left;
+                    padding: 0;
+                    height: auto;
                     text-align: left;
                 }
 
@@ -172,14 +178,12 @@ body {
             background-color: @colorLightBackground;
         }
 
-        .cardBottomRow {
+        .cardBottomRow,
+        .cardLicence {
             background-color: @colorCardLightBackground;
             padding: 5px;
             height: 17px;
-        }
-
-        .cardLicence {
-            float: left;
+            text-align: center;
         }
 
         .cardTeamFlag {
