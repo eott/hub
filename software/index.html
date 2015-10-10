@@ -30,13 +30,19 @@ title: "Software"
                     <div class="cardTags">{{doc.tags}}</div>
                     <div class="cardDesc">{{doc.description}}</div>
 
-                    {% if doc.licence == 'ccsa4' %}
-                        <div class="cardLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
-                    {% elsif doc.licence == 'pd' %}
-                        <div class="cardLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
-                    {% else %}
-                        <div class="cardLicence">Licence under evaluation</div>
-                    {% endif %}
+                    <div class="cardBottomRow">
+                        {% if doc.licence == 'ccsa4' %}
+                            <div class="cardLicence"><a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div>
+                        {% elsif doc.licence == 'pd' %}
+                            <div class="cardLicence"><a href="http://creativecommons.org/publicdomain/zero/1.0/">Public domain</a></div>
+                        {% else %}
+                            <div class="cardLicence">Licence under evaluation</div>
+                        {% endif %}
+
+                        {% if doc.team == true %}
+                            <div class="cardTeamFlag">TEAM</div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         {% endif %}

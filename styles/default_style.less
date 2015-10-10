@@ -6,6 +6,7 @@
 @colorBoxBorder            = #606556;
 @colorBoxShadow            = #070806;
 @colorWhite                = #ffffff;
+@colorTeamFlag             = #ffc18c;
 @colorWhiteVeryTransparent = rgba(255, 255, 255, 0.1);
 @colorWhiteHalfTransparent = rgba(255, 255, 255, 0.5);
 
@@ -142,8 +143,7 @@ body {
         }
 
         .cardTitle,
-        .cardDesc,
-        .cardLicence {
+        .cardDesc {
             position: relative;
             text-align: center;
             padding: 5px;
@@ -172,8 +172,20 @@ body {
             background-color: @colorLightBackground;
         }
 
-        .cardLicence {
+        .cardBottomRow {
             background-color: @colorCardLightBackground;
+            padding: 5px;
+            height: 17px;
+        }
+
+        .cardLicence {
+            float: left;
+        }
+
+        .cardTeamFlag {
+            float: right;
+            font-weight: 700;
+            color: @colorTeamFlag;
         }
 
         .cardLink {
