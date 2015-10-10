@@ -3,11 +3,11 @@ title: "Written Word"
 ---
 
 {% assign subcollections = "Nonfiction,Game-related,Fanfiction" | split: ',' %}
+{% assign zindex = 10000 %}
 
 {% for subcollection in subcollections %}
 <h2>{{subcollection}}</h2>
     {% assign docs = site.written-word | sort: 'date' | reverse %}
-    {% assign zindex = 10000 %}
 
     {% for doc in docs %}
         {% if doc.subcollection == subcollection %}

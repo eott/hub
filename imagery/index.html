@@ -3,11 +3,11 @@ title: Imagery
 ---
 
 {% assign subcollections = "Photos,Screenshots,CGI" | split: ',' %}
+{% assign zindex = 10000 %}
 
 {% for subcollection in subcollections %}
 <h2>{{subcollection}}</h2>
     {% assign images = site.imagery | sort: 'date' | reverse %}
-    {% assign zindex = 10000 %}
 
     {% for img in images %}
         {% if img.subcollection == subcollection %}
