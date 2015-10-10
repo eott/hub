@@ -70,6 +70,14 @@ title: Home
         </a>
     </div>
 
+    {% if post.crosspost == true %}
+        <div class="blogCrosspost">
+            <a href="{{post.crosspost-permalink}}" target="_blank">
+                Crosspost: {{post.crosspost-name}}
+            </a>
+        </div>
+    {% endif %}
+
     <div class="blogText">
         {{post.content}}
     </div>

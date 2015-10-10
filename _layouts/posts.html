@@ -4,8 +4,16 @@
     <div class="blogPost">
         <div class="blogDate">{{page.date | date: '%d.%m.%Y'}}</div>
 
+        {% if page.crosspost == true %}
+            <div class="blogCrosspost">
+                <a href="{{page.crosspost-permalink}}" target="_blank">
+                    Crosspost: {{page.crosspost-name}}
+                </a>
+            </div>
+        {% endif %}
+
         <div class="blogText">
-            {{page.content}}
+            {{content}}
         </div>
     </div>
 </div>
