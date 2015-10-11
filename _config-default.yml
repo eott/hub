@@ -1,6 +1,6 @@
-title: "eott -  The collected works of some guy on the Internet"
-description: "A general hub page for everything that I want to share with the world. If something from me is not on here, it's either not worth talking about or confidential."
-author: "Etienne Ott"
+title: "Some title"
+description: "Some description"
+author: "Some bloke"
 year: "2015"
 
 baseurl: "http://localhost/hub/_site"
