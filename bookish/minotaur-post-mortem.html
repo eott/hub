@@ -1,0 +1,113 @@
+---
+title: "Post-Mortem on Minotaur"
+---
+<div style="width: 700px">
+Part of the preparation for the next Ludum Dare (because, hey, it’ll be here rather
+sooner than later) is looking into the past at how the previous entries worked and
+how they didn’t. First, let’s recap how our time was roughly spent during the three
+days of the jam, while working on
+<a href="http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=37344">Minotaur</a>:
+<br><br><br>
+Saturday:
+<br><br>
+We met at 9 o’clock, six hours after the theme was announced. I don’t think there
+is any way to improve this, since a good night’s sleep is crucial for doing anything.
+After an hour or so of smalltalk, setting up the project/workstations and deciding
+which engine we were using (Phaser), we were ready for brainstorming.
+<br><br>
+We had a few ideas what kind of game we wanted to do. Some ideas were really just
+other themes or settings, but in the end we had two ideas in competition. The one
+that didn’t make the cut was “You are the (Flying Spaghetti) Monster, converting
+people with your noodly appendages and meatballs, while Zeus throws lightning at
+you”. Hey, we can’t all be genious writers. As far as time goes, the brainstorming
+was done reasonably quick, without rushing things.
+<br><br>
+After we settled on the Minotaur theme, we split into three groups doing stuff. I
+can’t comment much on how my coworkers faired, since I was doing the graphics. I’m
+really a programmer, but Ludum Dare is perfect for dabbling here and there and I
+know how to use gimp somewhat effectively. The others were working on extending the
+game skeleton with the actual game logic, some basic AI and implementing procedural
+level generation. Unfortunately, we had to scrap that last one.
+<br><br>
+Graphics-wise I should probably look up how to improve the workflow. A lot of the
+time was spent creating mirrored and rotated versions of tiles. Since I was doing a
+bit of shadows and working exclusively with bitmaps, I had to fix the highlighting
+after mirroring/rotating the tiles. Maybe I can improve that aspect. I also would love
+to work more with higher levels of abstractions than pure bitmaps. I kinda did so
+with using copious amounts of layers (Achievement unlocked – “Layer Madness: Create
+a meaningful gimp file with more than 200 layers”), but there has to be a better way
+to work, possibly using vector graphics, texture editors/generators and specific
+programms for working with spritesheets/tilesets. Other than that, I think doing
+graphics simply takes a lot practice. Doubly so, creating them efficiently.
+<br><br>
+The big I-wish-we-could-have-done-this thing was animation. With my crappy workflow,
+animation would have required drawing each frame manually. The horror! It’s certainly
+possible and how a lot of people do it, but a programmer doing animation during LD?
+You gotta “cheat”. Again, with vector graphics you can draw key frames and let the
+computer interpolate the frames in between, but that is hardly possible with bitmaps.
+Something to research for next time.
+<br><br>
+My coworkers made better progress, but hit a bump in the road with pathfinding.
+Sure, everyone and their mother knows of A*, but it’s not like a language construct you
+can write down with a few keystrokes. First, you need a data structure, that actually
+supports the algorithm. Second, you have to implement and use it. Third, your actors
+need to decide where they want to go before they can calculate a path. In the end,
+the game didn’t end up using A* pathfinding, but a simple state-based movement, that
+worked well in the purely orthogonal maze, by cleverly choosing angles to deflect when
+hitting a wall.
+<br><br>
+We have plans to vastly improve working with simple state machines and pathfinding for
+the next LD, should we decide to use Phaser again. Now we know.
+<br><br><br>
+Sunday:
+<br><br>
+The second day is the day for the actual game logic. Having the mobs and the player move
+around is nice, but not exactly a game. Again I can’t say where the chokepoints for the
+programming side were, but I gathered, that a more systematic approach using OOP patterns
+(even if javascript is often called a functional programming language) right from the start
+would have saved a lot of time. Evil, global vars! Fight the monolithic functions! Say
+no to god objects! And for the love of Elune, don’t repeat yourself!
+<br><br>
+On the graphics side, I was busy doing some decoration objects, that later were reused
+as different sprites for the same game object to provide some variety. The only decorative
+thing in the level were some fountains, and those were the worst sprites I made. Oh well.
+<br><br>
+A big time waster was doing a big spritesheet for the mob groups. We decided that mobs could
+band together to form a group. Since collective behaviour and movement was basically impossible
+with the crude AI and movement we had, two or more mobs would simply fuse to one object
+with the sprite of a group. This time I had no shadows to worry about, so could copy+paste
+and rotate to my heart’s content, but it still took some time to create the spritesheet. If
+we have our better AI for the next game, I’ll be able to save on that side, since grouping
+can be done a more abstract level and the mobs simply stand close together (if we even need
+grouping).
+<br><br>
+At the end of the day, we had our game almost complete. However, from my previous entries I
+knew that instructions and tutorials are absolutely crucial for LD. People just don’t have
+time to figure out the game. So I decided to do a tutorial. For that I created a very small
+level and added a page-through collections of short texts, like “Strange creatures have
+invaded your labyrinth […] and if they band together, they get stronger.” They don’t outright
+tell you what to do in meta terms like mobs and highscore, but should still provide a quick
+introduction to the game. I really hope this solves the problem. Ludum Dare is not the time
+to create elaborate tutorials, that are longer than the main game.
+<br><br>
+At that point I also discovered a really annoying engine limitation: Reseting the game is
+not as easy as it should. The solution was to reload the page to reset the game. Ugh!
+<br><br><br>
+Monday:
+<br><br>
+We all had to work on Monday, so not much development was done on the game. In the evening,
+I extended the main level for some additional gameplay (still short though) and fixed a bug.
+After that, an unfortunately very short round of playtesting to check the winning/losing
+conditions and browser support, then it was already submission time (actually sleepy time).
+Even though the jam has a day more, the third day is not the day to do any heavy work, since
+most people have to work on mondays.
+<br><br><br>
+Conclusion:
+<br><br>
+Better preparation for common patterns in game development goes a loooong way. It’s not
+just that you can do stuff faster, but also more is possible because a reasonably well
+constructed program enables more features with a few lines of code than a horrible mess
+of spaghetti madness. Also, for graphics proper workflow and tooling is crucial. I don’t
+know much about audio, but maybe it’s the same. We chose external music and sound effects,
+because programmers make for horrible musicians (for us anyway).
+</div>
