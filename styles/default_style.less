@@ -23,326 +23,326 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
+}
 
-    #navbar {
-        white-space: nowrap;
-        overflow: hidden;
-        z-index: 10001; // I know, I know... A z-index of more than 10 is a code smell, but it was really necessary here, trust me
-        background-color: @colorDarkBackground;
+#navbar {
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 10001; // I know, I know... A z-index of more than 10 is a code smell, but it was really necessary here, trust me
+    background-color: @colorDarkBackground;
 
-        .navbarIcon {
-            display: inline-block;
-            vertical-align: top;
-            height: 50px;
-            width: 50px;
-            margin: 10px 0 10px 12px;
-        }
-
-        .navbarText {
-            display: inline-block;
-            vertical-align: top;
-            line-height: 50px;
-            font-size: 1.5em;
-            height: 50px;
-            margin: 10px 0 10px 40px;
-
-            span {
-                vertical-align: middle;
-            }
-        }
-
-        .navbarVerticalDivider {
-            width: @minWidthAutofold;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .svg {
-            width: 50px;
-            height: 50px;
-        }
-
-        a {
-            color: @colorNormalText;
-        }
+    .navbarIcon {
+        display: inline-block;
+        vertical-align: top;
+        height: 50px;
+        width: 50px;
+        margin: 10px 0 10px 12px;
     }
 
-    #header {
-        margin-left: @minWidthAutofold;
-        padding-left: 25px;
-        font-size: 1.5em;
+    .navbarText {
+        display: inline-block;
+        vertical-align: top;
         line-height: 50px;
-        background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
+        font-size: 1.5em;
+        height: 50px;
+        margin: 10px 0 10px 40px;
 
         span {
             vertical-align: middle;
         }
-
-        h1 {
-            font-size: 18px;
-            margin: 0;
-        }
     }
 
-    #content {
-        min-height: ~"calc(100% - 130px)"; // Escape the calc call, since LESS does not compile it correctly
-        padding: 15px 0 15px 15px;
-        margin-left: @minWidthAutofold;
+    .navbarVerticalDivider {
+        width: @minWidthAutofold;
+        text-align: center;
+        margin: 20px 0;
+    }
 
-        .cardPlacement {
-            float: left;
-            width: 170px;
-            height: 275px;
-            margin: 20px 10px 0 0;
-            position: relative; // This seems to be unnecessary with float, but required for a box-shadow-z-index bug
+    .svg {
+        width: 50px;
+        height: 50px;
+    }
 
-            &.document {
+    a {
+        color: @colorNormalText;
+    }
+}
+
+#header {
+    margin-left: @minWidthAutofold;
+    padding-left: 25px;
+    font-size: 1.5em;
+    line-height: 50px;
+    background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
+
+    span {
+        vertical-align: middle;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+}
+
+#content {
+    min-height: ~"calc(100% - 130px)"; // Escape the calc call, since LESS does not compile it correctly
+    padding: 15px 0 15px 15px;
+    margin-left: @minWidthAutofold;
+
+    .cardPlacement {
+        float: left;
+        width: 170px;
+        height: 275px;
+        margin: 20px 10px 0 0;
+        position: relative; // This seems to be unnecessary with float, but required for a box-shadow-z-index bug
+
+        &.document {
+            width: 300px;
+            height: 179px;
+
+            .cardContainer {
                 width: 300px;
                 height: 179px;
-
-                .cardContainer {
-                    width: 300px;
-                    height: 179px;
-                }
-
-                .cardDesc {
-                    text-align: left;
-                }
-
-                .cardLicence {
-                    float: left;
-                    padding: 0;
-                    height: auto;
-                    text-align: left;
-                }
-
-                .cardTitle {
-                    height: 1.3em;
-                }
-
-                &.hovering .cardContainer { // Duplicated from below, but otherwise the fixed height
-                    height: auto;           // of .cardPlacement.document would overwrite it
-                }
-
-                &.hovering .cardTitle {
-                    height: auto;           // Ditto
-                }
             }
 
-            &.hovering {
-                .cardContainer {
-                    box-shadow: 0 0 10px 5px @colorBoxBorder;
-                    height: auto;
-                }
+            .cardDesc {
+                text-align: left;
+            }
 
-                .cardTitle {
-                    white-space: normal;
-                    overflow: visible;
-                    text-overflow: initial;
-                }
+            .cardLicence {
+                float: left;
+                padding: 0;
+                height: auto;
+                text-align: left;
+            }
 
-                .cardDesc {
-                    height: auto;
-                }
+            .cardTitle {
+                height: 1.3em;
+            }
+
+            &.hovering .cardContainer { // Duplicated from below, but otherwise the fixed height
+                height: auto;           // of .cardPlacement.document would overwrite it
+            }
+
+            &.hovering .cardTitle {
+                height: auto;           // Ditto
             }
         }
 
-        .cardContainer {
-            border: 1px solid @colorBoxBorder;
-            background-color: @colorLightBackground;
-            width: 170px;
-            height: 275px;
-        }
-
-        .cardTitle,
-        .cardDesc {
-            position: relative;
-            text-align: center;
-            padding: 5px;
-        }
-
-        .cardThumb {
-            margin: 5px 0 0 5px;
-        }
-
-        .cardTitle {
-            font-weight: 700;
-            background-color: @colorCardLightBackground;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .cardTags {
-            height: 2.5em;
-            font-style: italic;
-            padding: 5px;
-            background-color: @colorCardLightBackground;
-        }
-
-        .cardDesc {
-            min-height: 2.9em;
-            height: 2.9em;
-            overflow: hidden;
-            background-color: @colorLightBackground;
-        }
-
-        .cardBottomRow,
-        .cardLicence {
-            background-color: @colorCardLightBackground;
-            padding: 5px;
-            height: 17px;
-            text-align: center;
-        }
-
-        .cardTeamFlag {
-            float: right;
-            font-weight: 700;
-            color: @colorTeamFlag;
-        }
-
-        .cardLink {
-            padding: 5px;
-
-            a:nth-child(n+2) {
-                margin-left: 20px;
+        &.hovering {
+            .cardContainer {
+                box-shadow: 0 0 10px 5px @colorBoxBorder;
+                height: auto;
             }
-        }
 
-        .blogPost {
-            max-width: 600px;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid @colorBoxBorder;
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px 0px @colorBoxShadow;
-        }
-
-        .blogTitle {
-            margin-top: 0;
-        }
-
-        .blogDate {
-            margin-bottom: 10px;
-            font-size: 0.8em;
-            display: inline-block;
-        }
-
-        .blogPermalink {
-            display: inline-block;
-            margin-left: 20px;
-        }
-
-        .blogCrosspost {
-            display: inline-block;
-            margin-left: 20px;
-
-            a {
-                color: @colorTeamFlag;
+            .cardTitle {
+                white-space: normal;
+                overflow: visible;
+                text-overflow: initial;
             }
-        }
 
-        #newEntryWrapper {
-            position: relative;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        #newEntryList {
-            padding: 0;
-            font-size: 0; // Necessary to hide the whitespace between list entries
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        #newEntryPrevious,
-        #newEntryNext {
-            position: absolute;
-            top: 0;
-            height: 90px;
-            width: 30px;
-            background-color: @colorWhiteVeryTransparent;
-            text-align: center;
-            padding-top: 60px;
-            cursor: pointer;
-            font-size: 25px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-
-            &:hover {
-                background-color: @colorWhiteHalfTransparent;
+            .cardDesc {
+                height: auto;
             }
-        }
-
-        #newEntryNext {
-            right: 0;
-        }
-
-        .newEntry {
-            list-style: none;
-            display: inline-block;
-            width: 130px;
-            height: 150px;
-            padding: 0 10px;
-            vertical-align: top;
-            border: 1px solid @colorCardLightBackground;
-            max-width: 600px;
-
-            &:nth-child(2n) {
-                background-color: @colorCardLightBackground;
-            }
-        }
-
-        .newEntryImg {
-            width: 110px;
-            height: 110px;
-            margin: 10px 0 0 10px;
-
-            &.icon {
-                width: 90px;
-                height: 90px;
-                margin: 20px 0 10px 20px;
-
-                path {
-                    fill: @colorWhite;
-                }
-            }
-        }
-
-        .newEntryTitle {
-            font-size: 13px;
-            width: 130px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: center;
-            margin-top: 5px;
-            vertica-align: top;
-        }
-
-        h1,
-        h2 {
-            clear: both;
-            margin: 0;
-            padding: 20px 0 15px 0;
         }
     }
 
-    #footer {
-        margin-left: @minWidthAutofold;
-        clear: both;
-        padding-left: 25px;
-        font-size: 0.8em;
-        line-height: 50px;
-        background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
+    .cardContainer {
+        border: 1px solid @colorBoxBorder;
+        background-color: @colorLightBackground;
+        width: 170px;
+        height: 275px;
+    }
 
-        span {
-            margin-right: 15px;
+    .cardTitle,
+    .cardDesc {
+        position: relative;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .cardThumb {
+        margin: 5px 0 0 5px;
+    }
+
+    .cardTitle {
+        font-weight: 700;
+        background-color: @colorCardLightBackground;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .cardTags {
+        height: 2.5em;
+        font-style: italic;
+        padding: 5px;
+        background-color: @colorCardLightBackground;
+    }
+
+    .cardDesc {
+        min-height: 2.9em;
+        height: 2.9em;
+        overflow: hidden;
+        background-color: @colorLightBackground;
+    }
+
+    .cardBottomRow,
+    .cardLicence {
+        background-color: @colorCardLightBackground;
+        padding: 5px;
+        height: 17px;
+        text-align: center;
+    }
+
+    .cardTeamFlag {
+        float: right;
+        font-weight: 700;
+        color: @colorTeamFlag;
+    }
+
+    .cardLink {
+        padding: 5px;
+
+        a:nth-child(n+2) {
+            margin-left: 20px;
         }
+    }
+
+    .blogPost {
+        max-width: 600px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid @colorBoxBorder;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px 0px @colorBoxShadow;
+    }
+
+    .blogTitle {
+        margin-top: 0;
+    }
+
+    .blogDate {
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        display: inline-block;
+    }
+
+    .blogPermalink {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .blogCrosspost {
+        display: inline-block;
+        margin-left: 20px;
+
+        a {
+            color: @colorTeamFlag;
+        }
+    }
+
+    #newEntryWrapper {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    #newEntryList {
+        padding: 0;
+        font-size: 0; // Necessary to hide the whitespace between list entries
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #newEntryPrevious,
+    #newEntryNext {
+        position: absolute;
+        top: 0;
+        height: 90px;
+        width: 30px;
+        background-color: @colorWhiteVeryTransparent;
+        text-align: center;
+        padding-top: 60px;
+        cursor: pointer;
+        font-size: 25px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+            background-color: @colorWhiteHalfTransparent;
+        }
+    }
+
+    #newEntryNext {
+        right: 0;
+    }
+
+    .newEntry {
+        list-style: none;
+        display: inline-block;
+        width: 130px;
+        height: 150px;
+        padding: 0 10px;
+        vertical-align: top;
+        border: 1px solid @colorCardLightBackground;
+        max-width: 600px;
+
+        &:nth-child(2n) {
+            background-color: @colorCardLightBackground;
+        }
+    }
+
+    .newEntryImg {
+        width: 110px;
+        height: 110px;
+        margin: 10px 0 0 10px;
+
+        &.icon {
+            width: 90px;
+            height: 90px;
+            margin: 20px 0 10px 20px;
+
+            path {
+                fill: @colorWhite;
+            }
+        }
+    }
+
+    .newEntryTitle {
+        font-size: 13px;
+        width: 130px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        margin-top: 5px;
+        vertica-align: top;
+    }
+
+    h1,
+    h2 {
+        clear: both;
+        margin: 0;
+        padding: 20px 0 15px 0;
+    }
+}
+
+#footer {
+    margin-left: @minWidthAutofold;
+    clear: both;
+    padding-left: 25px;
+    font-size: 0.8em;
+    line-height: 50px;
+    background: linear-gradient(to right, @colorDarkBackground, @colorLightBackground, @colorLightBackground);
+
+    span {
+        margin-right: 15px;
     }
 }
 
@@ -360,4 +360,8 @@ a {
         min-width: @minWidthAutofold;
         width: 300px;
     }
+}
+
+hr {
+    width: 90%;
 }
